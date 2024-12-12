@@ -1,0 +1,102 @@
+1. Trouver les revenus totaux générés par chaque article (item_name) et trier par ordre décroissant des revenus
+SELECT item_name , SUM(transaction_amount) as revenus_total  
+from sales
+GROUP BY item_name
+ORDER BY revenus_total DESC
+
+2. Lister les 5 types d'articles (item_type) les plus vendus en termes de quantité totale.
+SELECT item_type, sum(quantity) as sum_qt
+FROM sales
+GROUP BY item_name
+ORDER BY sum_qt DESC
+LIMIT 5
+
+
+3. Calculer le revenu total par type de transaction (transaction_type)
+SELECT transaction_type,sum(transaction_amount) as sum_transaction
+FROM sales
+GROUP BY transaction_type
+
+
+4. Obtenir le nombre total de ventes par vendeur (received_by)
+SELECT received_by,COUNT(order_id) as total
+FROM sales
+GROUP BY received_by
+
+5. Trouver la date avec le plus grand nombre de commandes et afficher le nombre de commandes pour cette date
+WITH cte AS (
+    SELECT date, COUNT(order_id) AS count_orders
+    FROM sales
+    GROUP BY date
+)
+SELECT date, count_orders
+FROM cte
+WHERE count_orders = (SELECT MAX(count_orders) FROM cte);
+
+
+6. Calculer le revenu moyen par commande (transaction_amount) pour chaque type d'article (item_type)
+SELECT item_type,AVG(transaction_amount) as moyen
+FROM sales
+GROUP BY item_type
+
+
+7. Lister les heures de vente (time_of_sale) qui génèrent le plus de transactions, regroupées par tranches horaires (ex. : matin, après-midi, soir, nuit)
+    
+SELECT time_of_sale,SUM(transaction_amount) as somme
+FROM sales
+GROUP BY time_of_sale
+
+
+8. Trouver les articles les plus populaires (item_name) pour chaque type de transaction (cash ou online).
+
+WITH cte AS (
+    SELECT 
+        transaction_type,
+        item_name,
+        COUNT(item_name) AS count_items,
+        ROW_NUMBER() OVER (
+            PARTITION BY transaction_type 
+            ORDER BY COUNT(item_name) DESC
+        ) AS row_num
+    FROM sales
+    GROUP BY transaction_type, item_name
+)
+SELECT transaction_type, item_name, count_items
+FROM cte
+WHERE row_num = 1;
+
+
+9. Calculer la contribution (%) de chaque type d'article (item_type) au revenu total de la table.
+
+SELECT item_type,SUM(transaction_amount)/(SELECT SUM(transaction_amount) as total_sales from sales)*100 as somme
+FROM sales
+GROUP BY item_type
+
+
+10. Identifier les périodes (date + time_of_sale) où les ventes dépassent la moyenne globale des transactions, en termes de montant (transaction_amount).
+
+SELECT date, sum(transaction_amount) as somme
+FROM sales
+GROUP BY date
+HAVING  somme>(SELECT AVG(transaction_amount) from sales)
+
+
+11. Analyser les performances des vendeurs en trouvant le vendeur (received_by) qui génère le plus de revenus pour chaque tranche horaire (time_of_sale).
+with cte as(SELECT received_by,time_of_sale,SUM(transaction_amount) as somme,
+ROW_NUMBER() OVER(PARTITION BY received_by ORDER by somme DESC) as row
+FROM sales
+GROUP BY received_by,time_of_sale)
+SELECT * from cte
+where row=1
+
+
+12. Créer un classement des articles (item_name) par chiffre d'affaires mensuel, et identifier les articles leaders pour chaque mois.
+with cte as(SELECT EXTRACT(MONTH FROM date) as month,EXTRACT(YEAR FROM date) as year,item_name,sum(transaction_amount) as somme
+,row_number() over(partition by month,year ORDER by somme DESC) as row
+from sales
+GROUP BY month,year,item_name)
+SELECT * from cte 
+where row=1
+
+
+  
