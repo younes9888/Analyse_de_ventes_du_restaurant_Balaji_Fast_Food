@@ -116,10 +116,11 @@ Visualisations clés créées :
 ---
 
 ## Résultats et recommandations
-1. **Articles les plus vendus** : Se concentrer sur la promotion des articles les plus vendus pour augmenter les revenus.
+1. **Articles les plus vendus** :Les sandwichs et Frankies génèrent la majeure partie des ventes. Continuons à les promouvoir tout en explorant des stratégies pour booster les ventes des articles moins performants. Vous pourriez également vous concentrer sur la promotion des articles les plus vendus pour augmenter vos revenus.
 2. **Performance des vendeurs** : Inciter les meilleurs vendeurs à maintenir leur productivité.
-3. **Préférences de paiement** : Assurer une expérience de paiement en ligne fluide car cela représente une part importante des revenus.
-4. **Heures de pointe** : Optimiser le personnel et l'inventaire pendant les heures de pointe.
+3. **Préférences de paiement** : Assurer une expérience de paiement en cach fluide car cela représente une part importante des revenus. Vous pourriez offrir des réductions ou des récompenses pour encourager le paiement en ligne.
+4. **Heures de pointe** : La plage horaire du soir est cruciale pour les ventes. Vous pourriez capitaliser sur cette tendance en offrant des réductions et d'optimiser le personnel et l'inventaire pendant ces heures.
+5. **Prédiction jusqu'a fin d'annee 2023 paiement**   : Si la tendance se maintient, vous pourriez vous attendre à une augmentation continue des transactions jusqu'à la fin de 2023.
 
 ---
 
