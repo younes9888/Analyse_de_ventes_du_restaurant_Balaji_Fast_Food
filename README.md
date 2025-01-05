@@ -102,8 +102,10 @@ Visualisations clés créées :
 5. **Total des transactions par temps de vente** :
    - Diagramme en barres affichant le total des transactions par temps de vente.
 
-Voici une vue d'ensemble du dashboard : [Aperçu du rapport](/Balaji analyse de ventre (Capture du rapport).png)
-Le fichier `.pbix` est inclus pour explorer le rapport interactif.
+
+Voivi une vue d'ensemble du rapport : [Apercu du rapport](/Balaji_analyse_de_ventes(Capture_de_rapport).png).
+Le fichier '.pbix' est inclus pour explorer le rapport interactif.
+
 ---
 
 ## Configuration du projet
