@@ -103,7 +103,7 @@ Visualisations clés créées :
    - Diagramme en barres affichant le total des transactions par temps de vente.
 
 
-Voivi une vue d'ensemble du rapport : [Apercu du rapport](/Balaji_analyse_de_ventes(Capture_de_rapport).png).
+Voivi une vue d'ensemble du rapport : [Aperçu du rapport](/Balaji_analyse_de_ventes(Capture_de_rapport).png).
 Le fichier '.pbix' est inclus pour explorer le rapport interactif.
 
 ---
