@@ -128,6 +128,6 @@ Le fichier '.pbix' est inclus pour explorer le rapport interactif.
 ---
 
 ## Contributeurs
-- [Younes ZIAT](https://github.com/younes9888) - Analyste de données
+- [Younes ZIAT](https://github.com/younes9888)
 
 ---
